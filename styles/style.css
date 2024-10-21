@@ -1,5 +1,451 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
+/* пишем стили для темной темы здесь*/
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  margin: 0 auto;
+  background-image: var(--background-image);
+  color: var(--text-color);
+  font-family: var(--main-font, sans-serif);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.header {
+  display: grid;
+  height: 100vh;
+  min-height: 768px;
+  position: relative;
+  padding: 20px;
+  grid-template-rows: 1fr min-content 1fr;
+  justify-items: center;
+  align-items: flex-start;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  font-size: var(--font-size);
+  font-weight: var(--font-weight-regular);
+  line-height: 1;
+  background-color: transparent;
+  border: none;
+  text-transform: lowercase;
+  color: var(--accent-color);
+  cursor: pointer;
+  padding: 2.5px 13px 2.5px 13px;
+  font-style: normal;
+  transition: all 0.5s ease;
+}
+
+.header__theme-menu-button:hover {
+  cursor: pointer;
+  outline: 1px solid var(--accent-color);
+  border-block-end: 1px solid transparent;
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end: 1px solid var(--accent-color);
+}
+
+.header__theme-menu-button_active {
+  outline: 1px solid var(--accent-color);
+  pointer-events: none;
+}
+
+.decorated-zone::after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 1;
+  width: 25px;
+  height: 25px;
+  border-block-start: 1px solid var(--accent-color);
+  border-inline-end: 1px solid var(--accent-color);
+  top: 20px;
+  left: 979px;
+}
+
+.decorated-zone::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 1;
+  width: 25px;
+  height: 25px;
+  border-block-end: 1px solid var(--accent-color);
+  border-inline-start: 1px solid var(--accent-color);
+  top: 723px;
+  left: 20px;
+}
+
+.header__rec::after {
+  content: "REC";
+  display: block;
+  position: absolute;
+  z-index: 1;
+  width: 33px;
+  height: 26px;
+  left: 943px;
+  top: 20px;
+  line-height: 25px;
+  text-align: center;
+  color: var(--accent-color);
+}
+
+.header__decor::after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 1;
+  width: 9px;
+  height: 9px;
+  left: 986px;
+  top: 28px;
+  background: var(--accent-color);
+  box-shadow: 0px 0px 4px 2px var(--accent-color);
+  border-radius: 100%;
+}
+
+.header__title {
+  justify-self: left;
+  align-self: center;
+  margin-left: -20px;
+  line-height: 82.5%;
+  font-weight: var(--font-weight-bolt);
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  color: var(--title-cover);
+  text-shadow: 4px 4px 0px var(--accent-color);
+}
+
+.title-decor {
+  background-color: var(--accent-color);
+  color: var(--text-color-decor);
+}
+
+.header__text {
+  max-width: 50%;
+  justify-self: right;
+  align-self: center;
+  font-style: normal;
+  font-weight: var(--font-weight-bolt);
+  line-height: var(--line-height);
+}
+
+.content__section {
+  padding: 60px 20px 80px 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.content__section-title {
+  font-style: normal;
+  color: var(--color-heading);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight-bolt);
+}
+
+.content__section-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.content__section-list-item {
+  width: 649px;
+}
+
+.card__title {
+  font-style: normal;
+  font-size: var(--font-size);
+  font-weight: var(--font-weight-bolt);
+  margin-bottom: 10px;
+}
+
+.text__link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0px var(--accent-color);
+}
+
+.text__link:focus {
+  outline: none;
+}
+
+.text__link:hover {
+  border-block-end: 1px solid var(--accent-color);
+}
+
+.text__link:focus-visible {
+  outline: 1px solid var(--accent-color);
+}
+
+.content__section-lots {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.lots__title {
+  padding-right: 689px;
+}
+
+.content__section-lots-list {
+  display: flex;
+  gap: 20px;
+}
+
+.content__section-lots-list-item {
+  width: 315px;
+}
+
+.content__section-advice {
+  display: flex;
+  gap: 20px;
+  padding: 80px 20px;
+}
+
+.content__section-advice-block {
+  max-width: 649px;
+}
+
+.content__section-advice-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card__title-advice {
+  font-weight: var(--font-weight-regular);
+}
+
+.gallery {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.gallery__container {
+  margin-top: 20px;
+  display: grid;
+  gap: 20px;
+}
+
+.sunset__img {
+  grid-column: 1/3;
+  grid-row: 1/2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.ice-cream__img {
+  grid-column: 3/4;
+  grid-row: 1/3;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.tape__img {
+  grid-column: 1/2;
+  grid-row: 2/4;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.book__img {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.street__img {
+  grid-column: 2/4;
+  grid-row: 3/4;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.footer {
+  margin-top: 60px;
+  padding: 20px;
+  display: flex;
+  height: 100vh;
+  min-height: 768px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__title {
+  line-height: 82.5%;
+  font-weight: var(--font-weight-bolt);
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  color: var(--title-cover);
+  text-shadow: 4px 4px 0px var(--accent-color);
+}
+
+@media (width<=1023px) {
+  .header {
+    min-height: 1024px;
+    justify-items: right;
+    align-items: center;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: column;
+  }
+
+  .decorated-zone::after {
+    left: 723px;
+  }
+  
+  .decorated-zone::before {
+    top: 979px;
+  }
+
+  .header__rec::after {
+    left: 687px;
+  }
+  
+  .header__decor::after {
+    left: 730px;
+  }
+  
+  .content__section-list-item {
+    width: 472px;
+  }
+  
+  .lots__title {
+    padding-right: 512px;
+  }
+  
+  .content__section-lots-list {
+    flex-direction: column;
+  }
+  
+  .content__section-lots-list-item {
+    width: 728px;
+  }
+
+  .content__section-advice-block {
+    max-width: 472px;
+  }
+
+  .footer {
+    min-height: 1024px;
+  }
+
+}
+
+@media (width<=767px) {
+  .header {
+    min-height: 668px;
+    padding: 10px;
+  }
+
+  .decorated-zone::after {
+    left: 340px;
+    top: 10px;
+  }
+  
+  .decorated-zone::before {
+    top: 633px;
+    left: 10px;
+  }
+
+  .header__rec::after {
+    left: 304px;
+    top: 10px;
+  }
+  
+  .header__decor::after {
+    left: 347px;
+    top: 18px;
+  }
+
+  .header__title {
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    margin-left: 0;
+  }
+
+  .header__text {
+    max-width: 100%;
+  }
+
+  .content__section {
+    padding: 40px 10px 50px 10px;
+    flex-direction: column;
+  }
+  
+  .content__section-list-item {
+    width: 355px;
+  }
+  
+  .content__section-lots {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .lots__title {
+    padding-right: 0;
+  }
+  
+  .content__section-lots-list-item {
+    width: 355px;
+  }
+
+  .content__section-advice {
+    flex-direction: column;
+    padding: 50px 10px;
+  }
+  
+  .content__section-advice-block {
+    max-width: 355px;
+  }
+
+  .gallery {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  .gallery__container {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .footer {
+    margin-top: 40px;
+    padding: 10px;
+    min-height: 668px;
+  }
+  
+  .footer__title {
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  }
+  
 }
