@@ -147,7 +147,7 @@
 .content__section {
   padding: 60px 20px 20px 20px;
   display: grid;
-  grid-template-columns: 315px 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
@@ -293,10 +293,6 @@
   
   .header__decor::after {
     left: 730px;
-  }
-
-  .content__section {
-    grid-template-columns: 236px 1fr 1fr;
   }
 
   .content__section-list-lots {
