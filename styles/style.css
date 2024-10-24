@@ -295,8 +295,20 @@
     left: 730px;
   }
 
+  .content__section {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .content__section-list {
+    grid-column: span 1;
+  }
+  
+  .content__section-block {
+    grid-column: span 1;
+  }
+
   .content__section-list-lots {
-    grid-column: span 3;
+    grid-column: span 2;
     display: flex;
     flex-direction: column;
     gap: 20px;
